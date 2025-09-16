@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WorkSocial India</title>
+    <meta name="description" content="WorkSocial India empowers bankers with tools, knowledge, and community to guide customers toward financial freedom." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                50: '#eff6ff',
+                100: '#dbeafe',
+                300: '#93c5fd',
+                500: '#2563eb',
+                600: '#1d4ed8',
+                700: '#1e3a8a',
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-950 text-slate-100">
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const offerings = [
+        {
+          title: 'Loan Calculators',
+          description:
+            'Quickly estimate EMI, eligibility, and balance transfers with banker-grade accuracy designed for India.',
+        },
+        {
+          title: "Knowledge Hub",
+          description:
+            'Regulatory briefs, policy explainers, and customer-ready guides to stay ahead of RBI updates.',
+        },
+        {
+          title: "Banker\'s Corner",
+          description:
+            'Peer playbooks, sales decks, and workflow automations to power your frontline teams.',
+        },
+        {
+          title: 'Community Platform',
+          description:
+            'Host events, share success stories, and collaborate with bankers shaping the future of finance.',
+        },
+      ];
+
+      const reasons = [
+        'Built with Indian banking compliance in mind',
+        'Actionable insights sourced from top-performing bankers',
+        'Secure infrastructure with role-based access',
+        'Always-on support and live enablement sessions',
+      ];
+
+      const tools = [
+        'Home Loan Affordability Calculator',
+        'Personal Loan EMI Planner',
+        'Business Loan Comparison Tool',
+        'SIP & Mutual Fund Growth Predictor',
+        'Fixed Deposit Ladder Builder',
+      ];
+
+      const posts = [
+        {
+          title: 'How PSBs are modernising credit journeys in Tier-2 cities',
+          category: 'Insights',
+          date: 'Aug 28, 2025',
+        },
+        {
+          title: 'Five questions to ask before recommending a refinance',
+          category: 'Community',
+          date: 'Aug 18, 2025',
+        },
+        {
+          title: 'Playbook: Turning customer conversations into deeper relationships',
+          category: 'Banker\'s Corner',
+          date: 'Aug 05, 2025',
+        },
+      ];
+
+      const CheckIcon = () => (
+        <svg
+          className="h-5 w-5 text-brand-400"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+      );
+
+      const App = () => {
+        return (
+          <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950">
+            <header className="relative overflow-hidden">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(37,99,235,0.35),_transparent_55%)]" aria-hidden="true"></div>
+              <nav className="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+                <a href="#top" className="flex items-center gap-3 text-lg font-semibold tracking-tight text-white">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-500 shadow-lg shadow-brand-500/30">
+                    <svg
+                      className="h-6 w-6"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 15l5-6 3.5 4.5L20 7"
+                      />
+                    </svg>
+                  </span>
+                  WorkSocial India
+                </a>
+                <div className="hidden items-center gap-6 text-sm font-medium text-slate-200 md:flex">
+                  <a href="#about" className="transition hover:text-white">About</a>
+                  <a href="#offerings" className="transition hover:text-white">Offerings</a>
+                  <a href="#tools" className="transition hover:text-white">Tools</a>
+                  <a href="#community" className="transition hover:text-white">Community</a>
+                  <a
+                    href="#join"
+                    className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-brand-500 hover:text-white"
+                  >
+                    Join Us
+                  </a>
+                </div>
+              </nav>
+
+              <section className="relative mx-auto max-w-6xl px-6 pb-24 pt-14 md:pb-32 md:pt-20">
+                <div className="grid gap-12 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:items-center">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.3em] text-brand-300">
+                      For India's frontline financial leaders
+                    </p>
+                    <h1 className="mt-6 text-4xl font-bold leading-tight text-white md:text-5xl">
+                      Empowering Bankers. Guiding Customers. Building Financial Freedom.
+                    </h1>
+                    <p className="mt-6 max-w-xl text-lg text-slate-300">
+                      WorkSocial India equips banks and NBFC teams with digital tools, industry insights, and a vibrant community so every customer conversation ends with confidence.
+                    </p>
+                    <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                      <a
+                        href="#tools"
+                        className="flex items-center justify-center rounded-full bg-brand-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/30 transition hover:bg-brand-400"
+                      >
+                        Explore Calculators
+                      </a>
+                      <a
+                        href="#join"
+                        className="flex items-center justify-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:border-brand-400 hover:text-brand-200"
+                      >
+                        Join the WorkSocial Community
+                      </a>
+                    </div>
+                    <dl className="mt-10 grid grid-cols-2 gap-6 text-sm text-slate-300 sm:max-w-lg">
+                      <div>
+                        <dt className="font-semibold text-white">10k+ Bankers</dt>
+                        <dd>Collaborating across India's leading financial institutions.</dd>
+                      </div>
+                      <div>
+                        <dt className="font-semibold text-white">120+ Playbooks</dt>
+                        <dd>Ready-to-use scripts, workflows, and compliance checklists.</dd>
+                      </div>
+                    </dl>
+                  </div>
+                  <div className="relative overflow-hidden rounded-3xl bg-slate-900/60 p-6 shadow-xl shadow-brand-500/20">
+                    <div className="absolute -left-16 -top-16 h-48 w-48 rounded-full bg-brand-500/30 blur-3xl" aria-hidden="true"></div>
+                    <div className="relative flex flex-col gap-5">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-xs uppercase tracking-wider text-slate-400">Live workshop</p>
+                          <p className="text-lg font-semibold text-white">Reimagining Loan Advisory</p>
+                        </div>
+                        <span className="rounded-full bg-green-400/20 px-3 py-1 text-xs font-medium text-green-300">On air</span>
+                      </div>
+                      <p className="text-sm text-slate-300">
+                        Join senior bankers from across India as they showcase strategies that turn complex customer journeys into trusted relationships.
+                      </p>
+                      <div className="flex items-center gap-3">
+                        {[1, 2, 3, 4].map((item) => (
+                          <span
+                            key={item}
+                            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/10 text-sm font-semibold text-white"
+                          >
+                            BK
+                          </span>
+                        ))}
+                        <span className="text-xs text-slate-400">+2k registered</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </header>
+
+            <main className="relative">
+              <section id="about" className="mx-auto max-w-6xl px-6 py-20">
+                <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl shadow-brand-700/10 md:p-12">
+                  <div className="grid gap-10 md:grid-cols-2 md:items-start">
+                    <div>
+                      <p className="text-sm font-medium uppercase tracking-[0.25em] text-brand-200">About Us</p>
+                      <h2 className="mt-4 text-3xl font-semibold text-white md:text-4xl">
+                        A collaborative movement designed for India's financial trailblazers.
+                      </h2>
+                    </div>
+                    <p className="text-base leading-relaxed text-slate-200">
+                      WorkSocial India unites bankers, wealth advisors, and credit champions who believe financial progress starts with empowered teams. From advisory tools tailored for Indian markets to curated learning paths and community-led mentorship, we help institutions deliver trustworthy, human-centered banking.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              <section id="offerings" className="bg-slate-950/80">
+                <div className="mx-auto max-w-6xl px-6 py-20">
+                  <div className="flex flex-col gap-6 text-center">
+                    <p className="text-sm font-medium uppercase tracking-[0.3em] text-brand-200">Offerings</p>
+                    <h2 className="text-3xl font-semibold text-white md:text-4xl">Everything a modern banker needs</h2>
+                    <p className="mx-auto max-w-2xl text-base text-slate-300">
+                      Discover tools designed with inputs from PSU and private bank leaders to transform every interaction into a growth opportunity.
+                    </p>
+                  </div>
+                  <div className="mt-12 grid gap-6 md:grid-cols-2">
+                    {offerings.map((item) => (
+                      <article
+                        key={item.title}
+                        className="flex flex-col gap-4 rounded-3xl border border-white/10 bg-white/5 p-8 text-left transition hover:border-brand-300/40 hover:shadow-xl hover:shadow-brand-500/20"
+                      >
+                        <h3 className="text-2xl font-semibold text-white">{item.title}</h3>
+                        <p className="text-sm text-slate-300">{item.description}</p>
+                        <span className="mt-auto text-xs font-semibold uppercase tracking-[0.2em] text-brand-300">
+                          Learn more ?
+                        </span>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              </section>
+
+              <section className="mx-auto max-w-6xl px-6 py-20">
+                <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center">
+                  <div className="space-y-6">
+                    <p className="text-sm font-medium uppercase tracking-[0.25em] text-brand-200">Why Choose Us</p>
+                    <h2 className="text-3xl font-semibold text-white md:text-4xl">
+                      Partnership that strengthens your promise to customers.
+                    </h2>
+                    <p className="text-base text-slate-300">
+                      Every feature of WorkSocial India is crafted with feedback from bankers working across India's dynamic financial landscape. We blend technology with community so your teams stay trusted, informed, and ready.
+                    </p>
+                  </div>
+                  <ul className="space-y-4">
+                    {reasons.map((reason) => (
+                      <li
+                        key={reason}
+                        className="flex items-start gap-3 rounded-2xl border border-white/5 bg-white/5 p-4"
+                      >
+                        <span className="mt-1">
+                          <CheckIcon />
+                        </span>
+                        <p className="text-sm text-slate-200">{reason}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </section>
+
+              <section id="tools" className="bg-slate-950/80">
+                <div className="mx-auto max-w-6xl px-6 py-20">
+                  <div className="items-center justify-between gap-8 md:flex">
+                    <div>
+                      <p className="text-sm font-medium uppercase tracking-[0.3em] text-brand-200">Tools</p>
+                      <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">Calculators made for conversation-ready advice</h2>
+                      <p className="mt-4 max-w-xl text-base text-slate-300">
+                        Equip your team with calculators tailored to Indian lending norms and ready to share instantly with customers online or in-branch.
+                      </p>
+                    </div>
+                    <a
+                      href="#join"
+                      className="mt-6 inline-flex items-center justify-center rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/30 transition hover:bg-brand-400 md:mt-0"
+                    >
+                      Try Tools Now
+                    </a>
+                  </div>
+                  <ul className="mt-10 grid gap-4 md:grid-cols-2">
+                    {tools.map((tool) => (
+                      <li key={tool} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200">
+                        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-500/30 text-brand-100">
+                          <svg
+                            className="h-4 w-4"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
+                          </svg>
+                        </span>
+                        {tool}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </section>
+
+              <section id="community" className="mx-auto max-w-6xl px-6 py-20">
+                <div className="flex flex-col gap-6 text-center">
+                  <p className="text-sm font-medium uppercase tracking-[0.3em] text-brand-200">Blog & Community</p>
+                  <h2 className="text-3xl font-semibold text-white md:text-4xl">Voices from the WorkSocial network</h2>
+                  <p className="mx-auto max-w-2xl text-base text-slate-300">
+                    Practical stories, templates, and tactics shared by bankers who are winning customer trust every day.
+                  </p>
+                </div>
+                <div className="mt-12 grid gap-6 md:grid-cols-3">
+                  {posts.map((post) => (
+                    <article
+                      key={post.title}
+                      className="flex h-full flex-col gap-4 rounded-3xl border border-white/10 bg-white/5 p-6 text-left transition hover:border-brand-300/40 hover:shadow-xl hover:shadow-brand-500/20"
+                    >
+                      <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-300">
+                        {post.category}
+                      </span>
+                      <h3 className="text-lg font-semibold text-white">{post.title}</h3>
+                      <p className="mt-auto text-xs text-slate-400">{post.date}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            </main>
+
+            <footer id="join" className="border-t border-white/10 bg-slate-950/90">
+              <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-16 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.3em] text-brand-200">Join Us</p>
+                  <h2 className="mt-4 text-3xl font-semibold text-white">Grow with the WorkSocial Community</h2>
+                  <p className="mt-3 max-w-2xl text-sm text-slate-300">
+                    From onboarding cohorts to mentorship circles, we're building the most trusted network for banking professionals in India.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-4 text-sm font-semibold text-white sm:flex-row">
+                  <a
+                    href="#"
+                    className="rounded-full border border-white/20 px-5 py-3 text-center transition hover:border-brand-400 hover:text-brand-200"
+                  >
+                    Sign Up
+                  </a>
+                  <a
+                    href="#"
+                    className="rounded-full border border-white/20 px-5 py-3 text-center transition hover:border-brand-400 hover:text-brand-200"
+                  >
+                    Contact Us
+                  </a>
+                  <a
+                    href="#"
+                    className="rounded-full border border-white/20 px-5 py-3 text-center transition hover:border-brand-400 hover:text-brand-200"
+                  >
+                    WhatsApp Connect
+                  </a>
+                </div>
+              </div>
+              <div className="border-t border-white/5">
+                <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+                  <p>Copyright {new Date().getFullYear()} WorkSocial India. All rights reserved.</p>
+                  <div className="flex gap-4">
+                    <a href="#" className="transition hover:text-brand-200">Privacy</a>
+                    <a href="#" className="transition hover:text-brand-200">Terms</a>
+                    <a href="#" className="transition hover:text-brand-200">Support</a>
+                  </div>
+                </div>
+              </div>
+            </footer>
+          </div>
+        );
+      };
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
+
+
+
+
