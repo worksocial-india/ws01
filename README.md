@@ -1,4 +1,4 @@
-Acme Financial Services – Static Site
+WorkSocial India – Static Site
 ====================================
 
 A responsive, accessible marketing site for financial services built with plain HTML, CSS, and a little JavaScript. No build step required.
